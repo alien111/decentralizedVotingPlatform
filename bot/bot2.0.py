@@ -20,7 +20,7 @@ sys.path.append('../blindSignature')
 from tools import *
 
 
-bot = telebot.TeleBot('5282719860:AAHTNQczBJvgGJdHzk69ICJLsNnrUmiT8b8')
+bot = telebot.TeleBot('TokenHere')
 
 # Postgres stuff
 
