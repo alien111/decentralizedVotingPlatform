@@ -2,7 +2,7 @@
 
 This is a telegram bot voting platform, that uses decentralized blockchain to store data and blind signature to sign votes.
 
-To run this project Python, Docker, PostgreSQL and some python packages.
+To run this project Python, Docker, PostgreSQL and some python packages are required.
 
 System makes backups of nodes every time block is mined. It allows to reduce possible data loss to the mempool size in case of emergency situations in the system operation.\
 System uses PostgreSQL database to store user variables, active polls and active voters lists for bot operations.
