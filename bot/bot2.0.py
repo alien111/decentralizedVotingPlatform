@@ -20,7 +20,7 @@ sys.path.append('../blindSignature')
 from tools import *
 
 
-bot = telebot.TeleBot('TokenHere')
+bot = telebot.TeleBot('5282719860:AAHTNQczBJvgGJdHzk69ICJLsNnrUmiT8b8')
 
 # Postgres stuff
 
@@ -391,7 +391,8 @@ def send_welcome(message):
 def get_startAnswer(message):
 	if (message.text == "Start!"):
 		keyboard = types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True, one_time_keyboard=True)
-		keyboard.add("Dev just push to blockchain", "Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
+		#keyboard.add("Dev just push to blockchain", "Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
+		keyboard.add("Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
 		msg = bot.send_message(message.from_user.id, "Choose your action!", reply_markup = keyboard)
 		bot.register_next_step_handler(msg, handle_action)
 
@@ -399,6 +400,7 @@ def get_startAnswer(message):
 @bot.message_handler(commands=['text'])
 def handle_action(message):
 
+	"""
 	if (message.text == "Dev just push to blockchain"):
 		node = selectNode()
 		isItTimeToMine = addData(node, "a")
@@ -407,8 +409,8 @@ def handle_action(message):
 				backupChain(i)
 		msg = bot.send_message(message.from_user.id, "Select action")
 		bot.register_next_step_handler(msg, handle_action)
-
-	elif (message.text == "Create poll"):
+	"""
+	if (message.text == "Create poll"):
 		msg = bot.send_message(message.from_user.id, "What is the theme of the poll?")
 		bot.register_next_step_handler(msg, handle_theme)
 
@@ -441,7 +443,8 @@ def handle_action(message):
 
 	else:
 		keyboard = types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True, one_time_keyboard=True)
-		keyboard.add("Dev just push to blockchain", "Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
+		#keyboard.add("Dev just push to blockchain", "Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
+		keyboard.add("Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
 		msg = bot.send_message(message.from_user.id, "Not a command! Try again.", reply_markup = keyboard)
 		bot.register_next_step_handler(msg, handle_action)
 
@@ -545,7 +548,8 @@ def handle_pollFinishWay(message):
 		connection.commit()
 
 		keyboard = types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True, one_time_keyboard=True)
-		keyboard.add("Dev just push to blockchain", "Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
+		#keyboard.add("Dev just push to blockchain", "Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
+		keyboard.add("Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
 		msg = bot.send_message(message.from_user.id, "Your poll has been created. Thank you!", reply_markup = keyboard)
 		bot.register_next_step_handler(msg, handle_action)
 
@@ -603,7 +607,8 @@ def handle_pollFinishTime(message):
 		connection.commit()
 
 		keyboard = types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True, one_time_keyboard=True)
-		keyboard.add("Dev just push to blockchain", "Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
+		#keyboard.add("Dev just push to blockchain", "Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
+		keyboard.add("Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
 		msg = bot.send_message(message.from_user.id, "Your poll has been created. Thank you!", reply_markup = keyboard)
 		bot.register_next_step_handler(msg, handle_action)
 	
@@ -720,7 +725,8 @@ def handle_voting(message):
 			connection.commit()
 
 			keyboard = types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True, one_time_keyboard=True)
-			keyboard.add("Dev just push to blockchain", "Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
+			#keyboard.add("Dev just push to blockchain", "Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
+			keyboard.add("Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
 			msg = bot.send_message(message.from_user.id, "Your vote has been saved. Thank you!\nPlease, delete the chat with the bot to keep your vote secure!", reply_markup = keyboard)
 			bot.register_next_step_handler(msg, handle_action)
 
@@ -738,7 +744,8 @@ def handle_voting(message):
 			connection.commit()
 
 			keyboard = types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True, one_time_keyboard=True)
-			keyboard.add("Dev just push to blockchain", "Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
+			#keyboard.add("Dev just push to blockchain", "Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
+			keyboard.add("Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
 			msg = bot.send_message(message.from_user.id, "Your vote is late, poll has already ended.", reply_markup = keyboard)
 			bot.register_next_step_handler(msg, handle_action)
 
@@ -784,7 +791,8 @@ def handle_pollExploration(message):
 			resultsString += f'Nobody has voted'
 
 		keyboard = types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True, one_time_keyboard=True)
-		keyboard.add("Dev just push to blockchain", "Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
+		#keyboard.add("Dev just push to blockchain", "Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
+		keyboard.add("Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
 		
 		msg = bot.send_message(message.from_user.id, resultsString, reply_markup = keyboard)
 		bot.register_next_step_handler(msg, handle_action)
@@ -805,7 +813,8 @@ def handle_errorReason(message):
 	bot.send_message(97781168, data)
 
 	keyboard = types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True, one_time_keyboard=True)
-	keyboard.add("Dev just push to blockchain", "Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
+	#keyboard.add("Dev just push to blockchain", "Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
+	keyboard.add("Create poll", "Find polls waiting for my vote", "Explore poll", "Error")
 
 	msg = bot.send_message(message.from_user.id, 'Select action', reply_markup = keyboard)
 	bot.register_next_step_handler(msg, handle_action)
