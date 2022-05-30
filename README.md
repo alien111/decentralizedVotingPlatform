@@ -10,7 +10,7 @@ System makes backups of nodes every time block is mined. It allows to reduce pos
 System uses PostgreSQL database to store user variables, active polls and active voters lists for bot operations.
 
 Scheme of nodes connection\
-<img src=/pics/scheme11_2.jpg width="100">
+![scheme11_2](/pics/scheme11_2.jpg "")
 
 Scheme of voting process\
 ![scheme2](/pics/scheme2.jpg "")
