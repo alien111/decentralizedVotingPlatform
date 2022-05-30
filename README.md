@@ -44,7 +44,7 @@ Running in several terminal windows looks like:\
 FOLDER : COMMAND
 ________________
 postgres			  : docker-compose up\
-postgres		 	  : python3 create.py\
+postgres		 	  : python3 create.py
 
 blockchain			: python3 main.py --port 5002\
 blockchain			: python3 main.py --port 5003\
