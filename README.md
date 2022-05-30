@@ -9,10 +9,10 @@ To run this project Python, Docker, PostgreSQL and some python packages are requ
 System makes backups of nodes every time block is mined. It allows to reduce possible data loss to the mempool size in case of emergency situations in the system operation.\
 System uses PostgreSQL database to store user variables, active polls and active voters lists for bot operations.
 
-Scheme of nodes connection
+Scheme of nodes connection\
 ![scheme11_2](/pics/scheme11_2.jpg "")
 
-Scheme of voting process
+Scheme of voting process\
 ![scheme2](/pics/scheme2.jpg "")
 
 Using this bot is simple! Check the screenshots.
